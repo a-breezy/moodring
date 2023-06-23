@@ -1,15 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
 	return (
 		<div className="App">
-			<header className="header">
-				<div>
-					<h1>MoodRing</h1>
-					<h2>a way to connect your device and see your gains</h2>
-				</div>
-			</header>
+			<Header></Header>
+			<Footer></Footer>
 		</div>
 	);
 }
