@@ -29,8 +29,16 @@ function MoodStats() {
 					</div>
 				</div>
 				<div className="graph-container">
-					<div className="graph">GRAPH</div>
-					<div className="stats">STATS THAT APPEAR ON MOUSE OVER</div>
+					<div
+						className="graph"
+						onMouseOver={() => setStats(true)}
+						onMouseOut={() => setStats(false)}
+					>
+						GRAPH GOES HERE
+					</div>
+					{stats && (
+						<div className="stats">STATS THAT APPEAR ON MOUSE OVER</div>
+					)}
 				</div>
 			</div>
 		</div>
