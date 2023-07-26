@@ -17,6 +17,48 @@
 	right: 0px;
 }
 
+#outter-o-svg {
+	animation-name: outter-o-color-trans;
+	animation-duration: 10s;
+	fill: red;
+}
+
+@keyframes outter-o-color-trans {
+	0% {
+		fill: red;
+	}
+	25% {
+		fill: green;
+	}
+	50% {
+		fill: blue;
+	}
+	100% {
+		fill: red;
+	}
+}
+
+#inner-o-svg {
+	animation-name: inner-o-color-trans;
+	animation-duration: 10s;
+	fill: green;
+}
+
+@keyframes inner-o-color-trans {
+	0% {
+		fill: green;
+	}
+	25% {
+		fill: blue;
+	}
+	50% {
+		fill: red;
+	}
+	100% {
+		fill: green;
+	}
+}
+
 /* Footer */
 .footer {
 	position: absolute;
