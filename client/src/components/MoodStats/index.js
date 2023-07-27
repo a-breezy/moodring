@@ -11,13 +11,15 @@ function MoodStats() {
 
 	return (
 		<section id="mood-section">
-			<h2 className="mood-stats">Your Stats</h2>
-			<p>
-				Here's where you can look at your stats to gleem some information on how
-				you're doing. Anything over 85 is great! If you're below 85, not to
-				worry, that just means that you've got to focus a bit more on that
-				aspect of your day to day.
-			</p>
+			<div className="mood-stats-desc">
+				<h2 className="mood-stats">Your Stats</h2>
+				<p>
+					Here's where you can look at your stats to gleem some information on
+					how you're doing. Anything over 85 is great! If you're below 85, not
+					to worry, that just means that you've got to focus a bit more on that
+					aspect of your day to day.
+				</p>
+			</div>
 			<div className="mood-container">
 				<div>
 					<div className="stats-container">
