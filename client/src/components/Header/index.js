@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
 	return (
 		<header className="header">
-			<h1 id="moodring-logo">
+			<div id="moodring-logo">
 				<svg
 					width="222"
 					height="156"
@@ -57,12 +57,12 @@ function Header() {
 						fill="black"
 					/> */}
 				</svg>
-			</h1>
-			<h2>
+			</div>
+			<h1>
 				Connect your Oura Ring
 				<br />
-				Learn what habits work
-			</h2>
+				Learn What Habits Work
+			</h1>
 		</header>
 	);
 }
