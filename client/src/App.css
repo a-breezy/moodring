@@ -33,7 +33,7 @@ header h1 {
 #outter-o-svg {
 	animation-name: outter-o-color-trans;
 	animation-duration: 10s;
-	animation-delay: 3s;
+	animation-delay: 1s;
 	fill: red;
 }
 
@@ -93,21 +93,30 @@ header h1 {
 }
 
 /* Footer */
-.footer {
-	position: fixed;
+footer {
 	width: 100%;
 	height: 5%;
-	bottom: 0;
+	margin-bottom: -10px;
 }
 
-.footer div {
+footer div {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	height: 100%;
 }
-.footer h6 {
-	margin: 10px;
+
+footer h5 {
+	margin: 20px 40px;
+	text-align: center;
+}
+footer a:link,
+a:visited {
+	color: rgb(0 0 0);
+}
+
+footer a:hover {
+	color: rgb(0 0 255);
 }
 
 /* Mood Stats */
@@ -115,15 +124,25 @@ header h1 {
 	min-height: 100vh;
 }
 
-.mood-stats-desc {
-	padding: 0 40px;
+.stats-desc-container {
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
 }
 
-.mood-stats {
+.stats-desc-item {
+	background-color: rgb(213 235 244);
+	border: 2px solid rgb(17 25 37);
+	border-radius: 25px;
+	padding: 20px;
+	margin: 20px;
+	flex-basis: 25vw;
+}
+
+.stats-desc-item h2 {
 	text-align: center;
 	font-family: Poppins, sans-serif;
-	width: 20%;
 }
 
 .mood-container {
@@ -132,14 +151,12 @@ header h1 {
 	margin: 50px 10px;
 	justify-content: space-evenly;
 }
+
 .stats-container {
 	display: flex;
 	flex-direction: column;
-	/* margin-left: 10px; */
-	/* margin: 0 20px; */
-	/* justify-content: center; */
-	/* align-items: center; */
 }
+
 .graph-container {
 	display: flex;
 	flex-direction: column;
@@ -148,19 +165,32 @@ header h1 {
 	height: 100%;
 	margin: 20px 10px 0 0;
 }
-.container {
+.stat-item {
 	display: flex;
-	border: 1px solid blue;
-	height: 150px;
-	width: 200px;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	background-color: rgb(213 235 244);
+	border: 2px solid rgb(17 25 37);
+	border-radius: 5px;
+	height: 150px;
+	width: 200px;
 }
+
+.stat-item p {
+	font-size: 25px;
+	font-weight: bold;
+	margin: 0;
+}
+
 .graph {
-	border: 1px solid black;
+	background-color: rgb(255, 255, 255);
+	border: 2px solid rgb(17 25 37);
+	border-radius: 10px;
 	height: 500px;
 	padding: 30px;
 	margin-bottom: 10px;
+	justify-self: center;
 }
 
 /* log mood */
@@ -182,15 +212,44 @@ header h1 {
 		position: static;
 	}
 
-	/* stats */
-	
-	.flex-container {
+	/* footer */
+	footer h5 {
+		margin: 10px;
+	}
+
+	/* mood stats */
+	.stats-desc {
+		flex-direction: column;
+	}
+
+	.stats-desc-item {
+		margin: 10px;
+		flex-basis: 100vw;
+	}
+
+	.mood-container {
 		flex-direction: column;
 		align-items: center;
 	}
+
 	.stats-container {
 		flex-direction: row;
 		flex-wrap: wrap;
+		justify-content: center;
+		margin-top: -30px;
+	}
+	.stat-item {
+		width: 40%;
+		margin: 10px;
+	}
+	.graph-container {
+		margin: 10px;
+		width: 100%;
+		height: 50vh;
+	}
+	.flex-container {
+		flex-direction: column;
+		align-items: center;
 	}
 	.container {
 		width: 150px;
