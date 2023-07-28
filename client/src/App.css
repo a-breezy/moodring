@@ -6,6 +6,10 @@
 * {
 	font-family: Roboto, sans-serif;
 }
+
+h2 {
+	font-family: Poppins, sans-serif;
+}
 .App {
 	/* background-image: linear-gradient(rgb(229 222 212), white); */
 	background-color: rgb(229 222 212);
@@ -138,11 +142,7 @@ footer a:hover {
 	padding: 20px;
 	margin: 20px;
 	flex-basis: 25vw;
-}
-
-.stats-desc-item h2 {
-	text-align: center;
-	font-family: Poppins, sans-serif;
+	text-align: left;
 }
 
 .mood-container {
@@ -173,6 +173,7 @@ footer a:hover {
 	background-color: rgb(213 235 244);
 	border: 2px solid rgb(17 25 37);
 	border-radius: 5px;
+	margin: 2px;
 	height: 150px;
 	width: 200px;
 }
@@ -196,6 +197,41 @@ footer a:hover {
 /* log mood */
 #log-mood-section {
 	min-height: 100vh;
+	margin: 0 10px;
+	padding: 0 20px;
+}
+
+#log-mood-section h2 {
+	text-align: center;
+}
+
+.log-mood-desc {
+	background-color: rgb(213 235 244);
+	border: 2px solid rgb(17 25 37);
+	border-radius: 10px;
+	padding: 10px;
+	margin: 0 30px;
+}
+
+.log-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	margin: 40px;
+}
+
+.log-container h3 {
+	padding: 10px;
+	text-align: start;
+}
+
+.notes-item p {
+	width: 70%;
+	margin: 10px;
+}
+.notes-item textarea {
+	width: 50%;
+	padding: 10px;
 }
 
 /* Mobile */
