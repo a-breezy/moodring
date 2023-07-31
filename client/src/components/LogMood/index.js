@@ -15,16 +15,21 @@ function LogMood() {
 		"Anxious",
 		"Angry",
 	];
-	const [formState, setFormState] = useState({ date: "", mood: "", notes: "" });
+	const [formState, setFormState] = useState({ date: "", mood: "", note: "" });
+	const { date, mood, note } = formState;
 	const [moodDate, setMoodDate] = useState(new Date());
 	const [moodState, setMoodState] = useState("");
 
 	// include backend logic to add date, mood, and notes to backend
 	console.log(formState);
 
-	function handleDateChange(newDate) {
-		setMoodDate(newDate);
-		setFormState(...formState, { date: moodDate });
+	function handleChange(changeType, data) {
+		if (changeType === "date") {
+			setFormState({ ...formState, date: data });
+		} else if (changeType === "mood") {
+		} else if (changeType === "note") {
+			setFormState({ ...formState, note: data });
+		}
 	}
 
 	return (
@@ -35,13 +40,28 @@ function LogMood() {
 				<div className="date-item log-container">
 					<h3>Select a date, if not today</h3>
 					<p>This is the calendar container</p>
-					<DatePicker selected={moodDate} onChange={handleDateChange} />
+					<DatePicker
+						name="date"
+						selected={moodDate}
+						defaultValue={date}
+						onChange={(date) => handleChange("date", date)}
+					/>
 				</div>
 				<div className="mood-select-item log-container">
 					<h3>Select a Mood from the Drop-Down</h3>
 					<div>
 						<p>This is the mood selection container</p>
-						<DropDown dropdownItems={moods} itemState={moodState} setItemState={setMoodState} />
+						<DropDown
+							name="mood"
+							defaultValue={mood}
+							dropdownItems={moods}
+							itemState={moodState}
+							setItemState={setMoodState}
+							onChange={(itemState) => {
+								console.log(itemState);
+								handleChange("mood", itemState);
+							}}
+						/>
 					</div>
 				</div>
 				<div className="notes-item log-container">
@@ -52,7 +72,15 @@ function LogMood() {
 							feeling. It will be logged and can be referenced in the future.
 						</p>
 					</div>
-					<textarea rows="4" placeholder="Type your mood here"></textarea>
+					<textarea
+						rows="4"
+						name="message"
+						placeholder="Type your mood here"
+						defaultValue={note}
+						onChange={(e) => {
+							handleChange("note", e.target.value);
+						}}
+					></textarea>
 				</div>
 			</form>
 		</section>
