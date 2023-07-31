@@ -6,3 +6,7 @@ This is a full stack web application using the Oura Ring API to graph your data 
 ## Usage
 While still in developement, the general idea is that users create an account where they input their unique API key which will allow the app to use their data. 
 From there, each day we ask our users to input their mood and a short description (280 characters) of how they feel. This will be inputed to a NoSQL database where users will be able to access days based on their mood to see general gains and make the best choices for their lives.
+
+## Technologies
+React
+[React Date Picker:](https://www.npmjs.com/package/react-datepicker) A simple and reusable Datepicker component for React

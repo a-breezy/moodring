@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import DropDown from "../DropDown";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker-cssmodules.css";
 
-// this component taks the user's data from oura and adds a mood and description to it
 function LogMood() {
-	const [dropDownOpen, setDropDownOpen] = useState(false);
-
-	let moods = [
+	const moods = [
 		"Ecstatic",
 		"Happy",
 		"Relaxed",
@@ -15,10 +15,17 @@ function LogMood() {
 		"Anxious",
 		"Angry",
 	];
+	const [formState, setFormState] = useState({ date: "", mood: "", notes: "" });
+	const [moodDate, setMoodDate] = useState(new Date());
+	const [moodState, setMoodState] = useState("");
 
-	const handleOpen = () => {
-		setDropDownOpen(!dropDownOpen);
-	};
+	// include backend logic to add date, mood, and notes to backend
+	console.log(formState);
+
+	function handleDateChange(newDate) {
+		setMoodDate(newDate);
+		setFormState(...formState, { date: moodDate });
+	}
 
 	return (
 		<section id="log-mood-section">
@@ -28,23 +35,13 @@ function LogMood() {
 				<div className="date-item log-container">
 					<h3>Select a date, if not today</h3>
 					<p>This is the calendar container</p>
+					<DatePicker selected={moodDate} onChange={handleDateChange} />
 				</div>
 				<div className="mood-select-item log-container">
 					<h3>Select a Mood from the Drop-Down</h3>
 					<div>
 						<p>This is the mood selection container</p>
-						<button onClick={handleOpen}>Select Mood</button>
-						{dropDownOpen ? (
-							<ul className="mood-dropdown">
-								{moods.map((mood) => {
-									return (
-										<li className="mood-dropdown-item" key={mood}>
-											<button>{mood}</button>
-										</li>
-									);
-								})}
-							</ul>
-						) : null}
+						<DropDown dropdownItems={moods} itemState={moodState} setItemState={setMoodState} />
 					</div>
 				</div>
 				<div className="notes-item log-container">
