@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const DropDown = (props) => {
 	const { dropdownItems, itemState, setItemState } = props;
 	const [dropDownOpen, setDropDownOpen] = useState(false);
+	
 	const handleOpen = (e) => {
 		e.preventDefault();
 		setDropDownOpen(!dropDownOpen);
@@ -17,15 +18,16 @@ const DropDown = (props) => {
 				<ul className="dropdown-menu">
 					{dropdownItems.map((item) => {
 						return (
-							<li className="dropdown-menu-item" key={item}>
-								<button
-									onClick={(e) => {
-										e.preventDefault();
-										setItemState(item);
-									}}
-								>
-									{item}
-								</button>
+							<li
+								className="dropdown-menu-item"
+								key={item}
+								onClick={() => {
+									// currently this changes the state within dropdown but doesn't send state back up to logmood
+									setItemState(item);
+									setDropDownOpen(!dropDownOpen);
+								}}
+							>
+								{item}
 							</li>
 						);
 					})}

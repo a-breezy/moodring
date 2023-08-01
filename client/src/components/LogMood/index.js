@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DropDown from "../DropDown";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker-cssmodules.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 function LogMood() {
 	const moods = [
@@ -27,6 +27,7 @@ function LogMood() {
 		if (changeType === "date") {
 			setFormState({ ...formState, date: data });
 		} else if (changeType === "mood") {
+			setFormState({ ...formState, mood: data });
 		} else if (changeType === "note") {
 			setFormState({ ...formState, note: data });
 		}
@@ -43,8 +44,11 @@ function LogMood() {
 					<DatePicker
 						name="date"
 						selected={moodDate}
-						defaultValue={date}
-						onChange={(date) => handleChange("date", date)}
+						defaultValue={moodDate}
+						onChange={(date) => {
+							setMoodDate(date);
+							handleChange("date", date);
+						}}
 					/>
 				</div>
 				<div className="mood-select-item log-container">
@@ -53,14 +57,9 @@ function LogMood() {
 						<p>This is the mood selection container</p>
 						<DropDown
 							name="mood"
-							defaultValue={mood}
 							dropdownItems={moods}
 							itemState={moodState}
 							setItemState={setMoodState}
-							onChange={(itemState) => {
-								console.log(itemState);
-								handleChange("mood", itemState);
-							}}
 						/>
 					</div>
 				</div>
