@@ -1,15 +1,38 @@
 import React from "react";
-import MoodStats from "../components/MoodStats";
-import LogMood from "../components/LogMood";
+import CreateAccount from "../components/CreateAccount";
 
 const Home = () => {
 	return (
-		<>
-        {/* if logged in user should see stats and be able to log mood */}
-			<MoodStats />
-			<LogMood />
-        {/* otherwise user should see a welcome screen and a call to action */}
-		</>
+		<div id="home">
+			<section id="home-desc">
+				<h2>Welcome To MoodRing</h2>
+				<div className='home-desc'>
+					<div className='img-block'>
+						{/* this image of the ring should align with the text */}
+						<img src="" alt="oura ring" />
+						<p className="home-p">
+							A place where you can connect you Oura ring and log your mood to
+							see changes in your mood. While the tags feature of Oura is great,
+							I found that I wanted to log some things that weren't available -
+							namely mood.
+						</p>
+					</div>
+					<p className="home-p">So I set out to change that.</p>
+					<p className="home-p">
+						When you create an account your unique Oura API key will give this
+						MoodRing the ability to take data from your Oura ring and log it.
+						From there you can log a mood, which will connect to your Oura data
+						and get graphed so you can see how your sleep, readiness, and
+						activity correlate with your mood!
+					</p>
+					<p>
+						After reading this you probably want to learn more about Oura Ring, if you don't already know about it.
+					</p>
+				</div>
+			</section>
+			<CreateAccount />
+			{/* <Login /> */}
+		</div>
 	);
 };
 

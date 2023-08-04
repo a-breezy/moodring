@@ -9,7 +9,7 @@ const DropDown = (props) => {
 		setDropDownOpen(!dropDownOpen);
 	};
 
-	console.log("itemstate", itemState);
+	// console.log("itemstate", itemState);
 
 	return (
 		<div className="dropdown">

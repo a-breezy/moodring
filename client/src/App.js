@@ -7,12 +7,12 @@ import Home from "./pages/Home";
 function App() {
 	return (
 		<div className="App">
-			<Header></Header>
+			<Header />
 			{/* This area will render with react router to provide routes to various pages */}
 			<div>
 				<Home />
 			</div>
-			<Footer></Footer>
+			<Footer />
 		</div>
 	);
 }

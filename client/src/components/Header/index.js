@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
 	return (
 		<header>
-			<div id="moodring-logo">
+			<div id="moodring-logo" href="#home">
 				<svg
 					width="222"
 					height="156"
