@@ -11,6 +11,7 @@ const CreateAccount = () => {
 	});
 
 	// set up mutation to addUser
+    // const [addUser, {error}] = useMutation(ADD_USER)
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -26,8 +27,10 @@ const CreateAccount = () => {
 				[name]: value,
 			});
 		}
-		console.log(value);
 	};
+
+    // for testing
+    let error = false;
 
 	// handle form submit
 	const handleFormSubmit = async (e) => {
@@ -117,7 +120,10 @@ const CreateAccount = () => {
 						<span>I accept the terms and conditions</span>
 					</label>
 				</fieldset>
-				<input id="create-acc-btn" type="submit" value="Submit"></input>
+				<div className="container">
+					<div>{error && <h3 className='error'>Whoops looks like something went wrong</h3>}</div>
+					<input id="create-acc-btn" type="submit" value="Submit"></input>
+				</div>
 			</form>
 		</section>
 	);

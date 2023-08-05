@@ -24,14 +24,28 @@ h2 {
 	background-color: var(--primary-color);
 }
 
+/* global variables */
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.error {
+	margin: 1em;
+}
+
 /* Header */
 header {
 	display: flex;
 	flex-wrap: wrap;
+	min-height: 30vh;
 	padding: 20px 0;
 }
 #moodring-logo {
 	margin-left: 10%;
+	margin: auto;
 }
 header h1 {
 	margin: auto;
@@ -156,7 +170,6 @@ footer a:hover {
 	min-width: 50%;
 }
 
-
 .home-p {
 	margin: 4em 0;
 }
@@ -189,13 +202,13 @@ footer a:hover {
 	height: 90%;
 }
 
-
 .create-acc-label {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin: 0.75em 2em;
 	padding: 1em;
+	color: var(--primary-color);
 }
 
 .create-acc-input {
@@ -218,8 +231,6 @@ footer a:hover {
 }
 
 #create-acc-btn {
-	display: flex;
-	align-self: flex-end;
 	background-color: var(--button-color);
 	border: 1px solid var(--primary-color);
 	border-radius: 0.25em;
@@ -406,7 +417,7 @@ footer a:hover {
 
 	/* create account */
 	#create-acc-sect {
-	padding: 1em;
+		padding: 1em;
 	}
 
 	#home h2 {
@@ -421,11 +432,11 @@ footer a:hover {
 	}
 
 	#create-acc-btn {
-	    align-self: center;
+		align-self: center;
 		margin: 1em;
 		padding: 1em;
 		width: 90%;
-	}	
+	}
 
 	/* mood stats */
 	.stats-desc {
