@@ -58,11 +58,18 @@ function Header() {
 					/> */}
 				</svg>
 			</div>
-			<h1>
-				Connect your Oura Ring
-				<br />
-				Learn What Habits Work
-			</h1>
+			<div className="nav-box">
+				<div>
+					<h1>Connect your Oura Ring</h1>
+					<h2>Learn What Habits Work</h2>
+				</div>
+				<ul id="nav" className="container">
+					<li><a href='#home'>Home</a></li>
+					<li><a href='#signup'>Sign Up</a></li>
+					<li><a href='#login'>Login</a></li>
+					<li><a href='https://www.oura.com'>Learn More</a></li>
+				</ul>
+			</div>
 		</header>
 	);
 }

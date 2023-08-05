@@ -7,6 +7,7 @@
 	--primary-color: rgb(229 222 212);
 	--secondary-color: rgb(213 235 244);
 	--tertiary-color: rgb(48, 77, 121);
+	--highlight: rgb(121, 126, 31);
 	--button-color: rgb(17 25 37);
 }
 
@@ -17,6 +18,11 @@
 h2 {
 	font-family: Poppins, sans-serif;
 	font-size: 30px;
+}
+
+li {
+	font-family: Belanosima, sans-serif;
+	font-size: 16px;
 }
 
 .App {
@@ -40,16 +46,39 @@ h2 {
 header {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
 	min-height: 30vh;
 	padding: 20px 0;
 }
 #moodring-logo {
-	margin-left: 10%;
-	margin: auto;
+	margin: 10%;
 }
 header h1 {
 	margin: auto;
 	font-family: Belanosima, sans-serif;
+}
+
+.nav-box {
+	margin-right: 3em;
+}
+
+#nav {
+	margin: 0;
+	padding: 0;
+	justify-content: space-around;
+}
+
+#nav li, a {
+	list-style-type: none;
+	text-decoration: none;
+	color: var(--tertiary-color)
+}
+
+#nav a:hover {
+	padding: 0.2rem;
+	color: var(--highlight);
+	outline: double 2px rgb(112, 29, 29);
 }
 
 .logo-svg {
@@ -402,12 +431,13 @@ footer a:hover {
 	header {
 		justify-content: center;
 	}
-	#moodring-logo {
-		margin-left: 0;
-	}
 	header h1 {
 		margin-top: 20px;
 		position: static;
+	}
+
+	.nav-box {
+		margin: 0;
 	}
 
 	/* footer */
@@ -472,7 +502,7 @@ footer a:hover {
 		flex-direction: column;
 		align-items: center;
 	}
-	.container {
+	/* .container {
 		width: 150px;
-	}
+	} */
 }
