@@ -69,10 +69,11 @@ header h1 {
 	justify-content: space-around;
 }
 
-#nav li, a {
+#nav li,
+a {
 	list-style-type: none;
 	text-decoration: none;
-	color: var(--tertiary-color)
+	color: var(--tertiary-color);
 }
 
 #nav a:hover {
@@ -193,14 +194,17 @@ footer a:hover {
 }
 
 .home-desc img {
-	display: flex;
-	justify-content: center;
+	/* display: flex; */
+	/* justify-content: center; */
 	align-self: center;
+	border: 2px solid black;
+	border-radius: 0.25rem;
 	min-width: 50%;
 }
 
 .home-p {
-	margin: 4em 0;
+	margin: 4em 1em;
+	min-width: 50%;
 }
 
 /* Create Account */
@@ -434,6 +438,7 @@ footer a:hover {
 	header h1 {
 		margin-top: 20px;
 		position: static;
+		text-align: center;
 	}
 
 	.nav-box {
@@ -450,15 +455,28 @@ footer a:hover {
 		padding: 1em;
 	}
 
+	.img-block {
+		flex-wrap: wrap;
+	}
+
 	#home h2 {
 		text-align: center;
+	}
+
+	.home-p {
+		margin: 2em 0;
 	}
 	.create-acc-form {
 		margin: 0;
 	}
 
 	.create-acc-label {
+		flex-wrap: wrap;
 		margin: 0.75em 0;
+	}
+
+	.create-acc-input {
+		min-width: 100%;
 	}
 
 	#create-acc-btn {
