@@ -122,7 +122,7 @@ const CreateAccount = () => {
 				</fieldset>
 				<div className="container">
 					<div>{error && <h3 className='error'>Whoops looks like something went wrong</h3>}</div>
-					<input id="create-acc-btn" type="submit" value="Submit"></input>
+					<input className="primary-btn" type="submit" value="Submit"></input>
 				</div>
 			</form>
 		</section>

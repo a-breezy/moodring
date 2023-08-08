@@ -13,11 +13,22 @@
 
 * {
 	font-family: Roboto, sans-serif;
+	font-size: 16px;
 }
 
-h2 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: Poppins, sans-serif;
-	font-size: 30px;
+}
+h1 {
+	font-size: 2.5em;
+}
+h2 {
+	font-size: 2em;
 }
 
 li {
@@ -31,6 +42,16 @@ li {
 }
 
 /* global variables */
+section {
+	min-height: 100vh;
+	padding: 2em;
+}
+
+section + h2 {
+	text-align: center;
+	font-size: 30px;
+}
+
 .container {
 	display: flex;
 	justify-content: space-between;
@@ -40,6 +61,22 @@ li {
 
 .error {
 	margin: 1em;
+}
+
+.primary-btn {
+	background-color: var(--button-color);
+	border: 1px solid var(--primary-color);
+	border-radius: 0.25em;
+	font-size: 1rem;
+	color: var(--primary-color);
+	margin: 3rem;
+	padding: 1em;
+	width: 20%;
+}
+
+.primary-btn:active {
+	background-color: var(--secondary-color);
+	color: var(--tertiary-color);
 }
 
 /* Header */
@@ -263,20 +300,27 @@ footer a:hover {
 	margin-left: 1em;
 }
 
-#create-acc-btn {
-	background-color: var(--button-color);
-	border: 1px solid var(--primary-color);
-	border-radius: 0.25em;
-	font-size: 1rem;
-	color: var(--primary-color);
-	margin: 3rem;
-	padding: 1em;
-	width: 20%;
+/* Login */
+#login-form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	flex-direction: column;
+	margin: 2em;
 }
 
-#create-acc-btn:active {
-	background-color: var(--secondary-color);
-	color: var(--tertiary-color);
+.form-label {
+	display: flex;
+	justify-content: space-between;
+	padding: 1.5em 2em;
+}
+.form-input {
+	width: 40%;
+}
+
+#login-form,
+.primary-btn {
+	align-self: flex-end;
 }
 
 /* Mood Stats */
@@ -431,6 +475,9 @@ footer a:hover {
 
 /* Mobile */
 @media (max-width: 800px) {
+	h2 {
+		text-align: center;
+	}
 	/* header */
 	header {
 		justify-content: center;
@@ -479,7 +526,7 @@ footer a:hover {
 		min-width: 100%;
 	}
 
-	#create-acc-btn {
+	.primary-btn {
 		align-self: center;
 		margin: 1em;
 		padding: 1em;
