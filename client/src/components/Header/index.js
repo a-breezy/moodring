@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
 	return (
 		<header>
-			<div id="moodring-logo" href="#home">
+			<div id="moodring-logo">
 				<svg
 					width="222"
 					height="156"
@@ -65,13 +66,13 @@ function Header() {
 				</div>
 				<ul id="nav" className="container">
 					<li>
-						<a href="#home">Home</a>
+						<Link to="/">Home</Link>
 					</li>
 					<li>
-						<a href="#signup">Sign Up</a>
+						<Link to="/signup">Sign Up</Link>
 					</li>
 					<li>
-						<a href="#login">Login</a>
+						<Link to="/login">Login</Link>
 					</li>
 					<li>
 						<a href="https://ouraring.com/">Learn More</a>

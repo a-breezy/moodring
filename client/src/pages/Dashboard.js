@@ -2,7 +2,7 @@ import React from "react";
 import MoodStats from "../components/MoodStats";
 import LogMood from "../components/LogMood";
 
-const Profile = () => {
+const Dashboard = () => {
 	return (
 		<>
         {/* if logged in user should see stats and be able to log mood */}
@@ -13,4 +13,4 @@ const Profile = () => {
 	);
 };
 
-export default Profile;
+export default Dashboard;
