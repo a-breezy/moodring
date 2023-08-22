@@ -1,12 +1,21 @@
 # MoodRing
-## A link between your Oura ring and your mood
+## Description
 
-This is a full stack web application using the Oura Ring API to graph your data and present your general wellbeing. The difference between this and the Oura app is that here you can input your mood as well to get a general sense of how you feel with the backing of your own data!
+MoodRing is a single page web application to add mood logging capabilities to the [Oura Ring](https://ouraring.com/).
 
-## Usage
-While still in developement, the general idea is that users create an account where they input their unique API key which will allow the app to use their data. 
-From there, each day we ask our users to input their mood and a short description (280 characters) of how they feel. This will be inputed to a NoSQL database where users will be able to access days based on their mood to see general gains and make the best choices for their lives.
+Users create an account, link it to their Oura Ring through [the Oura API](https://cloud.ouraring.com/docs/), and start logging their moods. Our users can add brief descriptions of what's caused their mood as well as the date if different from today. MoodRing will then make a call to the Oura API to gather the user's Sleep, Readiness, and Activity data and will graph it with the mood, allowing the user to visualize their mood in relation to other aspects of their lives.
 
 ## Technologies
-React
-[React Date Picker:](https://www.npmjs.com/package/react-datepicker) A simple and reusable Datepicker component for React
+
+### Frontend
+[React:](https://www.npmjs.com/package/react) A JavaScript library for user interface.
+[React Router DOM:](https://reactrouter.com/en/main/start/tutorial) Routing for single page applications, which uses the bowser's history API to allow users to traverse multiple pages of content within one React page.
+[React Date Picker:](https://www.npmjs.com/package/react-datepicker) A simple and reusable calendar component that allows user to select the date from a calendar.
+
+### Backend
+[Express:](https://www.npmjs.com/package/express) Minimal backend framework for creating a Node server.
+[Apollo Server:](https://www.npmjs.com/package/@apollo/server) GraphQL server for easy querying of NoSQL data.
+[GraphQL:](https://www.npmjs.com/package/graphql) API query language for requesting specific information.
+[MongoDB:](https://www.mongodb.com/) NoSQL database for data storage and management.
+[Mongoose:](https://www.npmjs.com/package/mongoose) Object document modelling tool for MongoDB.
+[Nodemon:](https://www.npmjs.com/package/nodemon) A tool to restart Node whenever a file changes in the directory of Nodemon.
