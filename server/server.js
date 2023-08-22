@@ -1,20 +1,35 @@
 const express = require("express");
-const mongoose = require("mongoose");
+const { ApolloServer } = require("apollo-server-express");
+
+const { typeDefs, resolvers } = require("./schema");
+const db = require("./config/connection");
+
+const PORT = process.env.PORT || 3001;
+const server = new ApolloServer({
+	typeDefs,
+	resolvers,
+});
 
 const app = express();
-const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
 
-// add database
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/MoodRing', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  });
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
-// Use this to log mongo queries being executed!
-mongoose.set('debug', true);
+const startApolloServer = async (typeDefs, resolvers) => {
+	await server.start();
+    
+	server.applyMiddleware({ app });
 
-app.listen(PORT, () => console.log(`Listening on localhost:${PORT}`));
+	db.once("open", () => {
+		app.listen(PORT, () => {
+			console.log(`API server listening on localhost:${PORT}`);
+			console.log(
+				`Use GraphQL at http://127.0.0.1:${PORT}${server.graphqlPath}`
+			);
+		});
+	});
+};
+
+startApolloServer(typeDefs, resolvers);
