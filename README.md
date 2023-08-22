@@ -15,6 +15,7 @@ Users create an account, link it to their Oura Ring through [the Oura API](https
 ### Backend
 [Express:](https://www.npmjs.com/package/express) Minimal backend framework for creating a Node server.
 [Apollo Server:](https://www.npmjs.com/package/@apollo/server) GraphQL server for easy querying of NoSQL data.
+[GraphQL Tag:](https://www.npmjs.com/package/graphql-tag) Allow usage of 'gql' template literal tag for GraphQL type definitions.
 [GraphQL:](https://www.npmjs.com/package/graphql) API query language for requesting specific information.
 [MongoDB:](https://www.mongodb.com/) NoSQL database for data storage and management.
 [Mongoose:](https://www.npmjs.com/package/mongoose) Object document modelling tool for MongoDB.
