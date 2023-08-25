@@ -20,3 +20,5 @@ Users create an account, link it to their Oura Ring through [the Oura API](https
 [MongoDB:](https://www.mongodb.com/) NoSQL database for data storage and management.
 [Mongoose:](https://www.npmjs.com/package/mongoose) Object document modelling tool for MongoDB.
 [Nodemon:](https://www.npmjs.com/package/nodemon) A tool to restart Node whenever a file changes in the directory of Nodemon.
+[Dotenv:](https://www.npmjs.com/package/dotenv) To keep environmental variables safe.
+[Faker:](https://fakerjs.dev/) A testing library for creating fake data to seed the database.

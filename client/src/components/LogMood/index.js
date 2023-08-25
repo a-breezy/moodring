@@ -71,11 +71,13 @@ function LogMood() {
 							feeling. It will be logged and can be referenced in the future.
 						</p>
 					</div>
+					{/* todo: add counter to note length */}
 					<textarea
 						rows="4"
 						name="message"
 						placeholder="Type your mood here"
 						defaultValue={note}
+						maxLength={280}
 						onChange={(e) => {
 							handleChange("note", e.target.value);
 						}}

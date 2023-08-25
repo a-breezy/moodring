@@ -1,14 +1,27 @@
 const { Schema, model } = require("mongoose");
 
 const moodSchema = new Schema({
-	// set a custom id
-	moodId: {
-		type: Schema.Types.ObjectId,
-		default: () => new Types.ObjectId(),
+	createdAt: {
+		type: Date,
+		default: Date.now,
+	},
+	user: {
+		type: String,
+		// required: true,
+	},
+	// todo these need to be called through the our api
+	sleepScore: {
+		type: Number,
+	},
+	readinessScore: {
+		type: Number,
+	},
+	activityScore: {
+		type: Number,
 	},
 	mood: {
 		type: String,
-		required: true,
+		// required: true,
 		enum: [
 			"Ecstatic",
 			"Happy",
@@ -20,7 +33,11 @@ const moodSchema = new Schema({
 			"Anxious",
 			"Angry",
 		],
-		default: "Select Mood",
+	},
+	description: {
+		type: String,
+		trim: true,
+		maxlength: 280,
 	},
 });
 
