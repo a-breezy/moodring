@@ -7,6 +7,7 @@ const typeDefs = gql`
 		lastName: String
 		email: String
 		ouraAPI: String
+		moods: [Mood]
 	}
 
 	type Mood {
@@ -23,6 +24,11 @@ const typeDefs = gql`
 	type Query {
 		me: User
 		user(email: String!): User
+		users: [User]
+		mood(email: String!): Mood
+		moods
+		lastSevenDaysMoods: [Mood]
+		moodsByMood: [Mood]
 	}
 `;
 

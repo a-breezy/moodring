@@ -18,9 +18,9 @@ db.once("open", async () => {
 		const lastName = faker.person.lastName();
 		const email = faker.internet.email();
 		const password = faker.internet.password();
-		const ouraApi = testApi;
+		const ouraAPI = testApi;
 
-		userData.push({ firstName, lastName, email, password, ouraApi });
+		userData.push({ firstName, lastName, email, password, ouraAPI });
 	}
 
 	// insert users into mood-ring db
@@ -48,8 +48,6 @@ db.once("open", async () => {
 		"Angry",
 	];
 
-     //! for testing multiple mood creation
-	// const createdMoods = [];
 	for (let i = 0; i < 50; i++) {
 		// must go through createdUsers take each id and add to mood creation
 		const randomUserIndex = Math.floor(Math.random() * createdUsers.length);
@@ -70,21 +68,16 @@ db.once("open", async () => {
 		const readinessScore = randomScore();
 		const activityScore = randomScore();
 
-        // insert Mood to db
+		// insert Mood to db
 		const createdMood = await Mood.create({
-            user,
+			user,
 			mood,
 			description,
 			sleepScore,
 			readinessScore,
 			activityScore,
 		});
-        
-        //! for testing multiple mood creation
-		// createdMoods.push(createdMood);
 	}
-    //! for testing multiple mood creation
-	// await Mood.collection.insertMany(createdMoods);
 
 	console.log("Done seeding!");
 	process.exit(0);

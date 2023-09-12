@@ -29,6 +29,9 @@ const userSchema = new Schema({
 		type: String,
 		required: true,
 	},
+	moods: [
+		
+	]
 });
 
 const User = model("User", userSchema);

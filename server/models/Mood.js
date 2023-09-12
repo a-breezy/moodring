@@ -7,7 +7,7 @@ const moodSchema = new Schema({
 	},
 	user: {
 		type: String,
-		// required: true,
+		required: true,
 	},
 	// todo these need to be called through the our api
 	sleepScore: {
