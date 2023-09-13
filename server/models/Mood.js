@@ -5,7 +5,7 @@ const moodSchema = new Schema({
 		type: Date,
 		default: Date.now,
 	},
-	user: {
+	userId: {
 		type: String,
 		required: true,
 	},

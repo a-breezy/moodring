@@ -1,4 +1,5 @@
 const { Mood } = require("../models");
+const { db } = require("../models/User");
 
 const moodController = {
 	// methods
@@ -6,10 +7,12 @@ const moodController = {
 	// get all users
 	//! testing only
 	getAllMoods(req, res) {
-		Mood.find({}).catch((err) => {
-			console.log(err);
-			res.status(400).json(err);
-		});
+		Mood.find({})
+			.catch((err) => {
+				console.log(err);
+				res.status(400).json(err);
+			})
+			.then((dbMoodData) => res.json(dbMoodData));
 	},
 
 	//todo getMoodByUserId

@@ -25,12 +25,13 @@ db.once("open", async () => {
 
 	// insert users into mood-ring db
 	const createdUsers = await User.collection.insertMany(userData);
+	console.log("Users seeded");
 
 	// get user id to ref User in the Mood collection
 	let userIds = [];
 	for (let i = 0; i < 10; i++) {
 		let userId = createdUsers.insertedIds[i];
-		userIds.push(userId);
+		userIds.push(userId.toString());
 	}
 
 	//* create mood data:
@@ -48,10 +49,12 @@ db.once("open", async () => {
 		"Angry",
 	];
 
+	const moodData = [];
 	for (let i = 0; i < 50; i++) {
 		// must go through createdUsers take each id and add to mood creation
-		const randomUserIndex = Math.floor(Math.random() * createdUsers.length);
-		const user = userIds.randomUserIndex;
+		const randomUserIndex = Math.floor(Math.random() * 10);
+		// console.log(randomUserIndex);
+		const userId = userIds[randomUserIndex];
 
 		// select a random mood from the list
 		const mood = moods[Math.floor(Math.random() * 9)];
@@ -68,9 +71,8 @@ db.once("open", async () => {
 		const readinessScore = randomScore();
 		const activityScore = randomScore();
 
-		// insert Mood to db
-		const createdMood = await Mood.create({
-			user,
+		moodData.push({
+			userId,
 			mood,
 			description,
 			sleepScore,
@@ -78,6 +80,9 @@ db.once("open", async () => {
 			activityScore,
 		});
 	}
+
+	const createdMoods = await Mood.collection.insertMany(moodData);
+	console.log("Moods seeded");
 
 	console.log("Done seeding!");
 	process.exit(0);
