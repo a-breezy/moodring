@@ -1,4 +1,5 @@
 # MoodRing
+
 ## Description
 
 MoodRing is a single page web application to add mood logging capabilities to the [Oura Ring](https://ouraring.com/).
@@ -8,15 +9,16 @@ Users create an account, link it to their Oura Ring through [the Oura API](https
 ## Technologies
 
 ### Frontend
+
 [React:](https://www.npmjs.com/package/react) A JavaScript library for user interface.
-[React Router DOM:](https://reactrouter.com/en/main/start/tutorial) Routing for single page applications, which uses the bowser's history API to allow users to traverse multiple pages of content within one React page.
+[React Router DOM:](https://reactrouter.com/en/main/start/tutorial) Routing for single page applications, which uses the browser's history API to allow users to traverse multiple pages of content within one React page.
 [React Date Picker:](https://www.npmjs.com/package/react-datepicker) A simple and reusable calendar component that allows user to select the date from a calendar.
 
 ### Backend
+
 [Express:](https://www.npmjs.com/package/express) Minimal backend framework for creating a Node server.
-[Apollo Server:](https://www.npmjs.com/package/@apollo/server) GraphQL server for easy querying of NoSQL data.
-[GraphQL Tag:](https://www.npmjs.com/package/graphql-tag) Allow usage of 'gql' template literal tag for GraphQL type definitions.
-[GraphQL:](https://www.npmjs.com/package/graphql) API query language for requesting specific information.
+[bcrypt:](https://www.npmjs.com/package/bcrypt) Hashing passwords.
+[jsonwebtoken:](https://www.npmjs.com/package/jsonwebtoken) Encoding and decoding json web tokens for user authentication.
 [MongoDB:](https://www.mongodb.com/) NoSQL database for data storage and management.
 [Mongoose:](https://www.npmjs.com/package/mongoose) Object document modelling tool for MongoDB.
 [Nodemon:](https://www.npmjs.com/package/nodemon) A tool to restart Node whenever a file changes in the directory of Nodemon.

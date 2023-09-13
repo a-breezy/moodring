@@ -15,7 +15,7 @@ app.use(require("./routes"));
 // if error connecting to Mongo
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
-db.once("open", () => {
+db.once("open", () => {  
 	app.listen(PORT, () => {
 		console.log(`API server listening on localhost:${PORT}`);
 	});
