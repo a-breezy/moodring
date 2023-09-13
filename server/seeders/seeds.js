@@ -71,7 +71,7 @@ db.once("open", async () => {
 		const readinessScore = randomScore();
 		const activityScore = randomScore();
 
-		moodData.push({
+		const createdMood = await Mood.create({
 			userId,
 			mood,
 			description,
@@ -79,9 +79,14 @@ db.once("open", async () => {
 			readinessScore,
 			activityScore,
 		});
+
+		const updateUserMood = await User.updateOne(
+			{_id: userId},
+			{$push: {moods: createdMood._id}}
+		)
 	}
 
-	const createdMoods = await Mood.collection.insertMany(moodData);
+	// const createdMoods = await Mood.collection.insertMany(moodData);
 	console.log("Moods seeded");
 
 	console.log("Done seeding!");

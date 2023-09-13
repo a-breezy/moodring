@@ -30,8 +30,11 @@ const userSchema = new Schema({
 		required: true,
 	},
 	moods: [
-		
-	]
+		{
+			type: Schema.Types.ObjectId,
+			ref: "Mood",
+		},
+	],
 });
 
 const User = model("User", userSchema);
