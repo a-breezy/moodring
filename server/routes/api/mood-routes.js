@@ -1,15 +1,17 @@
 const router = require("express").Router();
 const {
-	//! delete getAllMoods
-	getAllMoods,
-	getMoodByUserId,
+	getLatestMoodByUserId,
+	getLastSevenDayMoods,
 	addMood,
 	updateMood,
 	deleteMood,
 } = require("../../controllers/mood-controller");
 
-router.route("/").get(getAllMoods).post(addMood);
-
-router.route("/:userId").get(getMoodByUserId);
+// api/mood/<userId>
+router.route("/:userId").get(getLatestMoodByUserId).post(addMood);
+// api/mood/<userId>/lastSevenDay
+router.route("/:userId/lastSevenDays").get(getLastSevenDayMoods);
+// api/mood/<userId>/<moodId>
+router.route("/:userId/:moodId").put(updateMood).delete(deleteMood);
 
 module.exports = router;
