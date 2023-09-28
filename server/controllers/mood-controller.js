@@ -5,6 +5,7 @@ const moodController = {
 	// Gets user's most recent mood
 	getLatestMoodByUserId({ params }, res) {
 		Mood.findOne({ userId: params.userId })
+			.sort({ _id: -1 })
 			.then((dbMoodData) => {
 				if (!dbMoodData) {
 					res
@@ -47,6 +48,7 @@ const moodController = {
 	},
 
 	// create new mood
+	// ! this request returns 400 code, although it goes through. Check out postman to figure out issue perhaps requesting the userId from params alome
 	addMood({ params, body }, res) {
 		Mood.create(body)
 			.then(({ _id }) => {
@@ -63,14 +65,16 @@ const moodController = {
 						.json({ message: "No mood or user found with this id" });
 					return;
 				}
+				console.log(dbMoodData);
 				res.json(dbMoodData);
 			})
 			.catch((err) => res.status(400).json(err));
 	},
 
-	//todo updateMood
+	//updateMood
 	updateMood({ params, body }, res) {
-		Mood.findByIdAndUpdate({ _id: params._id }, body, {
+		console.log("params", params, " body", body);
+		Mood.findByIdAndUpdate({ _id: params.moodId }, body, {
 			new: true,
 		})
 			.then((dbMoodData) => {
@@ -83,9 +87,9 @@ const moodController = {
 			.catch((err) => res.status(400).json(err));
 	},
 
-	//todo deleteMood
+	// deleteMood
 	deleteMood({ params }, res) {
-		Mood.findByIdAndDelete({ _id: params._id })
+		Mood.findByIdAndDelete({ _id: params.moodId })
 			.then((dbMoodData) => {
 				if (!dbMoodData) {
 					res.status(404).json({ message: "No mood found with this id" });
